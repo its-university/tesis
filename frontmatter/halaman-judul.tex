@@ -1,0 +1,74 @@
+%% halaman-judul.tex
+%% Halaman Judul (Sampul Dalam)
+%% Format sama dengan cover.tex tapi tanpa background kuning
+%% Font: Sans-serif (TeX Gyre Heros) seperti cover
+%%
+%% EDIT LANGSUNG TEKS DI BAWAH INI SESUAI DATA TESIS ANDA
+\newpage
+\thispagestyle{plain}
+% Temporarily switch to sans-serif font for this page
+{
+\sffamily % Switch to sans-serif font
+
+% All layout using TikZ for precise positioning
+\begin{tikzpicture}[remember picture,overlay]
+    % ITS Logo - positioned at top left corner
+    \node[anchor=north west] at ([xshift=1.5cm,yshift=-2cm]current page.north west) 
+        {\includegraphics[width=3.5cm]{figures/logo-its.png}};
+    
+    % Blue stripe - full width
+    \fill[ITSBlue] ([yshift=-6cm]current page.north west) rectangle ([yshift=-6.5cm]current page.north east);
+    
+    % Content - positioned below blue stripe
+    % UBAH NILAI yshift=-8cm UNTUK MENGATUR JARAK DARI ATAS
+    \node[anchor=north west, text width=15cm] at ([xshift=2.0cm,yshift=-8cm]current page.north west) {
+        \begin{minipage}{15cm}
+        \begin{onehalfspace}
+        
+        %% ===== KODE TESIS =====
+        {\fontsize{12pt}{14pt}\selectfont\bfseries Tesis-Sidang Akhir - EF235401}
+        
+        \vspace{0.4cm}
+        
+        %% ===== JUDUL TESIS (18pt bold) =====
+        %% Edit judul di sini
+        {\fontsize{18pt}{22pt}\selectfont\bfseries 
+        Judul Tesis (Ditulis \textit{Capitalize Each Word} – sesuai EYD)}
+        
+        \vspace{1.8cm}
+        
+        %% ===== NAMA DAN NRP MAHASISWA =====
+        {\fontsize{12pt}{14pt}\selectfont\bfseries 
+        NAMA MAHASISWA\\
+        NRP MAHASISWA}
+        
+        \vspace{1cm}
+        
+        %% ===== DOSEN PEMBIMBING =====
+        {\fontsize{12pt}{14pt}\selectfont\bfseries DOSEN PEMBIMBING}
+        
+        \vspace{0.15cm}
+        
+        {\fontsize{12pt}{14pt}\selectfont\bfseries 
+        Nama Dosbing 1\\
+        Nama Dosbing 2}
+        
+        \vspace{1cm}
+        
+        %% ===== INFORMASI PROGRAM =====
+        {\fontsize{12pt}{14pt}\selectfont\bfseries 
+        PROGRAM MAGISTER\\
+        BIDANG KEAHLIAN .................(DIISI RMK)\\
+        PROGRAM STUDI S2 TEKNIK INFORMATIKA\\
+        DEPARTEMEN TEKNIK INFORMATIKA\\
+        FAKULTAS TEKNOLOGI ELEKTRO DAN INFORMATIKA CERDAS\\
+        INSTITUT TEKNOLOGI SEPULUH NOPEMBER\\
+        SURABAYA\\
+        TAHUN}
+        
+        \end{onehalfspace}
+        \end{minipage}
+    };
+\end{tikzpicture}
+
+} % End of sffamily

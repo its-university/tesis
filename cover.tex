@@ -1,0 +1,107 @@
+%% cover.tex
+%% External Cover Page Template for ITS Thesis
+%% Layout: White background (top with logo at left) -> Blue stripe -> Small white gap -> Yellow background
+%% Compatible with pdfLaTeX
+%% Command: pdflatex cover.tex
+
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{setspace}  % For line spacing
+
+% Use Helvetica-like font (closest to Trebuchet MS in pdfLaTeX)
+\usepackage{tgheros}  % TeX Gyre Heros (Helvetica clone)
+\renewcommand{\familydefault}{\sfdefault}
+
+% Page setup - no margins for full-page cover
+\geometry{
+    paperwidth=210mm,
+    paperheight=297mm,
+    margin=0mm
+}
+
+% ITS Official Colors
+\definecolor{ITSBlue}{HTML}{0067AC}
+\definecolor{ITSYellow}{HTML}{FFD700}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Background layout using TikZ
+\begin{tikzpicture}[remember picture,overlay]
+    % White background at top (for logo area) - larger area approximately 5.5cm from top
+    \fill[white] (current page.north west) rectangle ([yshift=-5.5cm]current page.north east);
+    
+    % Blue stripe (thin line) - approximately 0.5cm height
+    \fill[ITSBlue] ([yshift=-5.5cm]current page.north west) rectangle ([yshift=-6cm]current page.north east);
+    
+    % Small white gap below blue stripe - approximately 0.3cm
+    \fill[white] ([yshift=-6cm]current page.north west) rectangle ([yshift=-6.3cm]current page.north east);
+    
+    % Yellow background for the rest
+    \fill[ITSYellow] ([yshift=-6.3cm]current page.north west) rectangle (current page.south east);
+\end{tikzpicture}
+
+% ITS Logo - positioned at left in white area, larger size
+\vspace*{0.8cm}
+\hspace*{1.2cm}
+\includegraphics[width=3.8cm]{figures/logo-its.png}
+
+% Spacing from top of yellow area to first text
+\vspace{3.5cm}
+
+% Set 1.5 line spacing
+\onehalfspacing
+
+% Content area - with proper left margin
+\begin{flushleft}
+\hspace*{2.2cm}
+\parbox{15cm}{
+    % Course Code - Tesis Sidang Akhir (12pt bold)
+    {\fontsize{12pt}{14pt}\selectfont\bfseries Tesis-Sidang Akhir - EF235401}
+    
+    \vspace{0.5cm}
+    
+    % Title (Indonesian) - Capitalize Each Word sesuai EYD (18pt bold)
+    {\fontsize{18pt}{22pt}\selectfont\bfseries 
+    Judul Tesis (Ditulis \textit{Capitalize Each Word} – sesuai EYD)}
+    
+    \vspace{2.5cm}
+    
+    % Author Name and NRP (12pt bold)
+    {\fontsize{12pt}{14pt}\selectfont\bfseries 
+    NAMA MAHASISWA\\
+    NRP MAHASISWA}
+    
+    \vspace{1.3cm}
+    
+    % Supervisor Section (12pt bold)
+    {\fontsize{12pt}{14pt}\selectfont\bfseries DOSEN PEMBIMBING}
+    
+    \vspace{0.2cm}
+    
+    {\fontsize{12pt}{14pt}\selectfont\bfseries 
+    Nama Dosbing 1\\
+    Nama Dosbing 2}
+    
+    \vspace{1.3cm}
+    
+    % Program Information (12pt bold)
+    {\fontsize{12pt}{14pt}\selectfont\bfseries 
+    PROGRAM MAGISTER\\
+    BIDANG KEAHLIAN .................(DIISI RMK)\\
+    PROGRAM STUDI S2 TEKNIK INFORMATIKA\\
+    DEPARTEMEN TEKNIK INFORMATIKA\\
+    FAKULTAS TEKNOLOGI ELEKTRO DAN INFORMATIKA CERDAS\\
+    INSTITUT TEKNOLOGI SEPULUH NOPEMBER\\
+    SURABAYA\\
+    2025}
+}
+\end{flushleft}
+
+\end{document}

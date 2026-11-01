@@ -1,0 +1,106 @@
+%% pengesahan.tex
+%% Lembar Pengesahan Tesis
+%% Format sesuai template ITS dengan background pattern dan logo watermark
+%% Font: Times New Roman 12pt
+%%
+%% EDIT DATA DI BAWAH INI SESUAI DATA TESIS ANDA
+
+\newpage
+\thispagestyle{plain}
+
+% Background and watermark using TikZ
+\begin{tikzpicture}[remember picture,overlay]
+    % Background pattern - full page
+    \node[anchor=center, inner sep=0pt] at (current page.center) {
+        \includegraphics[width=\paperwidth,height=\paperheight]{figures/background-pengesahan.png}
+    };
+    
+    % ITS Logo watermark - centered, bigger (logo sudah transparan)
+    \node[anchor=center] at (current page.center) {
+        \includegraphics[width=13cm]{figures/logo-pengesahan.png}
+    };
+\end{tikzpicture}
+
+\vspace*{-0.5cm}
+
+% Content - reduced spacing to fit 1 page
+\begin{center}
+
+%% ===== JUDUL =====
+{\fontsize{14pt}{16pt}\selectfont\bfseries LEMBAR PENGESAHAN TESIS}
+
+\vspace{0.3cm}
+
+%% ===== KETERANGAN =====
+{\fontsize{12pt}{14pt}\selectfont
+Tesis disusun untuk memenuhi salah satu syarat memperoleh gelar,\\
+Magister Komputer (M.Kom.)\\
+di\\
+\textbf{Institut Teknologi Sepuluh Nopember}}
+
+\vspace{0.3cm}
+
+%% ===== DATA MAHASISWA =====
+{\fontsize{12pt}{14pt}\selectfont
+\textbf{Oleh:}\\
+\colorbox{yellow}{Nama Mahasiswa}\\
+NRP. \colorbox{yellow}{6025XXXXXXX}}
+
+\vspace{0.2cm}
+
+%% ===== TANGGAL DAN PERIODE =====
+{\fontsize{12pt}{14pt}\selectfont
+Tanggal Ujian: \colorbox{yellow}{dd mm yyyy}\\
+Periode Wisuda: \colorbox{yellow}{mm xxxx}}
+
+\vspace{0.2cm}
+
+%% ===== DISETUJUI =====
+{\fontsize{12pt}{14pt}\selectfont\textbf{Disetujui oleh:}}
+
+\end{center}
+
+\vspace{0.1cm}
+
+%% ===== DAFTAR PEMBIMBING DAN PENGUJI =====
+{\fontsize{12pt}{14pt}\selectfont
+\begin{enumerate}[itemsep=0.08cm, topsep=0pt, parsep=0pt]
+    \item \begin{tabular}[t]{@{}p{8.5cm}p{4.5cm}@{}}
+        Nama Pembimbing 1 & \dotfill \\[-0.15cm]
+        NIP. XXXXX & \\[-0.15cm]
+        (Pembimbing 1) &
+    \end{tabular}
+    
+    \item \begin{tabular}[t]{@{}p{8.5cm}p{4.5cm}@{}}
+        Nama Penguji 1 & \dotfill \\[-0.15cm]
+        NIP. XXXXX & \\[-0.15cm]
+        (Penguji 1) &
+    \end{tabular}
+    
+    \item \begin{tabular}[t]{@{}p{8.5cm}p{4.5cm}@{}}
+        Nama Penguji 2 & \dotfill \\[-0.15cm]
+        NIP. XXXXX & \\[-0.15cm]
+        (Penguji 2) &
+    \end{tabular}
+    
+    \item \begin{tabular}[t]{@{}p{8.5cm}p{4.5cm}@{}}
+        Nama Penguji 3 & \dotfill \\[-0.15cm]
+        NIP. XXXXX & \\[-0.15cm]
+        (Penguji 3) &
+    \end{tabular}
+\end{enumerate}
+}
+
+\vspace{0.3cm}
+
+%% ===== KEPALA DEPARTEMEN =====
+%% Rata kiri sejajar dengan nomor list menggunakan hspace di setiap baris
+{\fontsize{12pt}{14pt}\selectfont
+\noindent\hspace{0.5cm}Kepala Departemen Teknik Informatika
+
+\vspace{0.6cm}
+
+\noindent\hspace{0.5cm}Nama Kepala Departemen
+
+\noindent\hspace{0.5cm}NIP. XXXXX
+}

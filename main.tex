@@ -1,0 +1,347 @@
+%% main.tex
+%% Main Document for ITS Thesis Template
+%% Based on Panduan Penyusunan Tesis Program Magister ITS 2021
+%%
+%% COMPILATION INSTRUCTIONS:
+%% 1. Compile cover.tex first:
+%%    pdflatex cover.tex
+%%
+%% 2. Then compile main.tex:
+%%    pdflatex main.tex
+%%    bibtex main
+%%    pdflatex main.tex
+%%    pdflatex main.tex
+
+\documentclass{its-thesis}
+
+%% ============================================================================
+%% THESIS INFORMATION - ISI DATA TESIS ANDA DI SINI
+%% ============================================================================
+
+% Kode Tesis (sesuai mata kuliah)
+\thesisCode{EF235401}
+
+% Judul Tesis (Indonesia) - Capitalize Each Word sesuai EYD
+% Maksimum 20 kata
+\titleID{Judul Tesis Ditulis dengan Capitalize Each Word Sesuai EYD}
+
+% Thesis Title (English)
+\titleEN{Thesis Title Written in English with Proper Capitalization}
+
+% Informasi Penulis
+\authorname{NAMA MAHASISWA}
+\studentid{NRP MAHASISWA}
+
+% Informasi Dosen Pembimbing
+\supervisorOne{Prof. Dr. Nama Pembimbing 1, S.T., M.T.}
+\supervisorOneNIP{19XXXXXX XXXXXX X XXX}
+\supervisorTwo{Dr. Nama Pembimbing 2, S.Kom., M.Kom.}
+\supervisorTwoNIP{19XXXXXX XXXXXX X XXX}
+
+% Informasi Penguji
+\examinerOne{Dr. Nama Penguji 1, S.T., M.T.}
+\examinerOneNIP{19XXXXXX XXXXXX X XXX}
+\examinerTwo{Dr. Nama Penguji 2, S.Kom., M.Kom.}
+\examinerTwoNIP{19XXXXXX XXXXXX X XXX}
+
+% Informasi Ujian dan Wisuda
+\examDate{DD Bulan YYYY}
+\graduationPeriod{Semester Genap/Ganjil YYYY/YYYY}
+
+% Informasi Program Studi
+\studyProgram{S2 Teknik Informatika}
+\expertise{Manajemen Cerdas Informasi}
+\department{Teknik Informatika}
+\faculty{Teknologi Elektro dan Informatika Cerdas}
+
+% Tahun Tesis
+\thesisYear{2025}
+
+% Gelar yang diperoleh
+% \degree{Magister Teknik (M.T.)}
+
+% Kepala Departemen
+\deptHead{Prof. Dr. Nama Kaprodi, S.T., M.T.}
+\deptHeadNIP{19XXXXXX XXXXXX X XXX}
+
+% Kata Kunci (3-5 kata kunci, diurutkan alfabetis)
+\keywordsID{Kata Kunci 1, Kata Kunci 2, Kata Kunci 3, Kata Kunci 4, Kata Kunci 5}
+\keywordsEN{Keyword 1, Keyword 2, Keyword 3, Keyword 4, Keyword 5}
+
+%% ============================================================================
+%% BIBLIOGRAPHY FILE
+%% ============================================================================
+
+\addbibresource{references.bib}
+
+%% ============================================================================
+%% DOCUMENT BEGINS
+%% ============================================================================
+
+\begin{document}
+
+%% Override babel names explicitly (ensure they're set)
+\renewcommand{\contentsname}{DAFTAR ISI}
+\renewcommand{\listfigurename}{DAFTAR GAMBAR}
+\renewcommand{\listtablename}{DAFTAR TABEL}
+\renewcommand{\chaptername}{BAB}
+\renewcommand{\bibname}{DAFTAR PUSTAKA}
+
+%% ============================================================================
+%% COVER PAGE (SAMPUL LUAR) - TANPA NOMOR HALAMAN
+%% Compile cover.tex separately first to generate cover.pdf
+%% ============================================================================
+
+\includepdf[pages=1,pagecommand={\thispagestyle{empty}}]{cover.pdf}
+
+%% ============================================================================
+%% FRONT MATTER (BAGIAN AWAL)
+%% Penomoran halaman: angka Romawi kecil (i, ii, iii, ...)
+%% Halaman Judul dimulai dari halaman i
+%% ============================================================================
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pagestyle{plain}
+
+%% ----------------------------------------------------------------------------
+%% Halaman Judul (Sampul Dalam) - halaman i
+%% File: frontmatter/halaman-judul.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-judul}
+\phantomsection
+\addcontentsline{toc}{chapter}{HALAMAN JUDUL}
+
+%% Halaman Kosong setelah Halaman Judul
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Lembar Pengesahan
+%% File: frontmatter/pengesahan.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/pengesahan}
+\phantomsection
+\addcontentsline{toc}{chapter}{LEMBAR PENGESAHAN}
+
+%% Halaman Kosong setelah Pengesahan
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Pernyataan Orisinalitas Tesis
+%% File: frontmatter/pernyataan.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/pernyataan}
+\phantomsection
+\addcontentsline{toc}{chapter}{PERNYATAAN ORISINALITAS}
+
+%% Halaman Kosong setelah Pernyataan
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Kata Pengantar
+%% File: frontmatter/kata-pengantar.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/kata-pengantar}
+\phantomsection
+\addcontentsline{toc}{chapter}{KATA PENGANTAR}
+
+%% Halaman Kosong setelah Kata Pengantar
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Abstrak Bahasa Indonesia
+%% File: frontmatter/abstrak-id.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/abstrak-id}
+\phantomsection
+\addcontentsline{toc}{chapter}{ABSTRAK}
+
+%% Halaman Kosong setelah Abstrak ID
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Abstract English
+%% File: frontmatter/abstrak-en.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/abstrak-en}
+\phantomsection
+\addcontentsline{toc}{chapter}{ABSTRACT}
+
+%% Halaman Kosong setelah Abstract EN
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Daftar Isi
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\tableofcontents
+
+%% Halaman Kosong setelah Daftar Isi
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Daftar Tabel
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+\listoftables
+
+%% Halaman Kosong setelah Daftar Tabel
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Daftar Gambar
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+\listoffigures
+
+%% Halaman Kosong setelah Daftar Gambar
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Daftar Simbol
+%% File: frontmatter/daftar-simbol.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/daftar-simbol}
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR SIMBOL}
+
+%% Halaman Kosong setelah Daftar Simbol
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Daftar Singkatan
+%% File: frontmatter/daftar-singkatan.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/daftar-singkatan}
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR SINGKATAN}
+
+%% Halaman Kosong setelah Daftar Singkatan
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ============================================================================
+%% MAIN MATTER (BAGIAN UTAMA)
+%% Penomoran halaman: angka Arabic (1, 2, 3, ...)
+%% BAB 1 dimulai dari halaman 1
+%% ============================================================================
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{plain}
+
+%% ----------------------------------------------------------------------------
+%% BAB 1 - PENDAHULUAN
+%% File: chapters/bab1.tex
+%% ----------------------------------------------------------------------------
+\input{chapters/bab1}
+
+%% ----------------------------------------------------------------------------
+%% BAB 2 - KAJIAN PUSTAKA
+%% File: chapters/bab2.tex
+%% ----------------------------------------------------------------------------
+\input{chapters/bab2}
+
+%% ----------------------------------------------------------------------------
+%% BAB 3 - METODOLOGI PENELITIAN
+%% File: chapters/bab3.tex
+%% ----------------------------------------------------------------------------
+\input{chapters/bab3}
+
+%% ----------------------------------------------------------------------------
+%% BAB 4 - HASIL DAN PEMBAHASAN
+%% File: chapters/bab4.tex
+%% ----------------------------------------------------------------------------
+\input{chapters/bab4}
+
+%% ----------------------------------------------------------------------------
+%% BAB 5 - KESIMPULAN DAN SARAN
+%% File: chapters/bab5.tex
+%% ----------------------------------------------------------------------------
+\input{chapters/bab5}
+
+%% ============================================================================
+%% BACK MATTER (BAGIAN AKHIR)
+%% Tetap menggunakan penomoran Arabic
+%% ============================================================================
+
+%% ----------------------------------------------------------------------------
+%% Daftar Pustaka
+%% File: references.bib
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+\renewcommand{\bibname}{DAFTAR PUSTAKA}
+\bibliography{references}
+
+%% Halaman Kosong setelah Daftar Pustaka
+\newpage
+\thispagestyle{plain}
+\input{frontmatter/halaman-kosong}
+
+%% ----------------------------------------------------------------------------
+%% Biografi Penulis
+%% File: backmatter/biografi.tex
+%% ----------------------------------------------------------------------------
+\newpage
+\thispagestyle{plain}
+\input{backmatter/biografi}
+
+%% ============================================================================
+%% LAMPIRAN (uncomment jika diperlukan)
+%% ============================================================================
+
+% \appendix
+% \input{appendix/lampiran-a}
+% \input{appendix/lampiran-b}
+
+\end{document}
