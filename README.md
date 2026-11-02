@@ -1,108 +1,83 @@
 # Template Tesis ITS
 
-Template LaTeX untuk penulisan Tesis Program Magister Institut Teknologi Sepuluh Nopember (ITS) Surabaya.
+Template LaTeX untuk penulisan tesis Program Magister Institut Teknologi Sepuluh Nopember (ITS) Surabaya, disusun berdasarkan **Panduan Penyusunan Tesis Program Magister ITS 2021**.
 
-Berdasarkan **Panduan Penyusunan Tesis Program Magister ITS 2021**.
+[![Build thesis](https://github.com/its-university/tesis/actions/workflows/build.yml/badge.svg)](https://github.com/its-university/tesis/actions/workflows/build.yml)
 
-## Struktur Direktori
+## Struktur Proyek
 
-```
-thesis-template/
-├── main.tex              # Dokumen utama
-├── cover.tex             # Sampul luar (compile terpisah)
-├── its-thesis.cls        # Class file
-├── references.bib        # Daftar pustaka
-├── chapters/
-│   ├── bab1.tex          # BAB 1 - Pendahuluan
-│   ├── bab2.tex          # BAB 2 - Kajian Pustaka
-│   ├── bab3.tex          # BAB 3 - Metodologi Penelitian
-│   ├── bab4.tex          # BAB 4 - Hasil dan Pembahasan
-│   └── bab5.tex          # BAB 5 - Kesimpulan dan Saran
-├── frontmatter/
-│   ├── abstrak-id.tex    # Abstrak Bahasa Indonesia
-│   ├── abstrak-en.tex    # Abstract English
-│   └── kata-pengantar.tex # Kata Pengantar
-├── backmatter/
-│   └── biografi.tex      # Biografi Penulis
-└── figures/
-    └── logo-its.png      # Logo ITS
+```text
+tesis/
+├── main.tex                 # Dokumen utama
+├── cover.tex                # Sumber sampul luar
+├── cover.pdf                # Sampul hasil kompilasi, digunakan oleh main.tex
+├── its-thesis.cls           # Class dan format dokumen ITS
+├── references.bib           # Referensi BibTeX
+├── chapters/                # Bab 1–5
+├── frontmatter/             # Halaman awal, abstrak, daftar, dan pengesahan
+├── backmatter/              # Biografi penulis
+├── figures/                 # Logo dan gambar
+├── scripts/
+│   └── build.sh             # Kompilasi sampul dan tesis
+└── .github/workflows/
+    └── build.yml            # Pemeriksaan kompilasi otomatis
 ```
 
-## Cara Kompilasi
+Edit `main.tex` untuk mengisi identitas tesis, lalu lengkapi berkas di `frontmatter/`, `chapters/`, `backmatter/`, dan `references.bib`. Sesuaikan `cover.tex` jika informasi atau desain sampul perlu diubah.
 
-### 1. Compile Cover (Sampul Luar)
+## Prasyarat
+
+Pasang distribusi LaTeX yang menyediakan **pdfLaTeX**, **BibTeX**, dan paket LaTeX tambahan. Contoh untuk Ubuntu/Debian:
 
 ```bash
-pdflatex cover.tex
+sudo apt-get update
+sudo apt-get install texlive-latex-extra texlive-fonts-recommended texlive-science tex-gyre
 ```
 
-### 2. Compile Dokumen Utama
+## Kompilasi
+
+Dari direktori utama proyek, jalankan:
 
 ```bash
-pdflatex main.tex
+bash scripts/build.sh
+```
+
+Skrip mengompilasi `cover.tex`, lalu menjalankan urutan pdfLaTeX–BibTeX–pdfLaTeX dua kali untuk `main.tex`. Hasilnya adalah `cover.pdf` dan `main.pdf`. Perintah yang sama dijalankan oleh GitHub Actions pada setiap push dan pull request; PDF hasil CI tersedia sebagai artefak workflow.
+
+Kompilasi manual:
+
+```bash
+pdflatex -interaction=nonstopmode -halt-on-error -file-line-error cover.tex
+pdflatex -interaction=nonstopmode -halt-on-error -file-line-error main.tex
 bibtex main
-pdflatex main.tex
-pdflatex main.tex
+pdflatex -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error -file-line-error main.tex
 ```
 
-### Menggunakan Overleaf
+## Menggunakan Overleaf
 
-1. Upload semua file ke project Overleaf
-2. Set `main.tex` sebagai main document
-3. Compile `cover.tex` terpisah untuk menghasilkan `cover.pdf`
-4. Upload `cover.pdf` ke project
-5. Compile `main.tex`
+1. Unggah seluruh isi proyek dan pastikan `main.tex`, `cover.pdf`, serta direktori pendukung berada di tingkat teratas proyek.
+2. Pilih `main.tex` sebagai dokumen utama.
+3. Jika mengubah `cover.tex`, kompilasi sampul dengan pdfLaTeX terlebih dahulu dan unggah PDF hasilnya sebagai `cover.pdf`.
+4. Kompilasi `main.tex`; Overleaf akan menangani beberapa putaran kompilasi dan BibTeX.
 
 ## Spesifikasi Format
 
-Sesuai Panduan Penyusunan Tesis ITS 2021:
+Mengacu pada Panduan Penyusunan Tesis Program Magister ITS 2021:
 
 | Item | Spesifikasi |
-|------|-------------|
-| Kertas | A4 (210mm x 297mm), 80 gram |
-| Font | Times Roman 12pt |
+|---|---|
+| Kertas | A4 (210 × 297 mm), 80 gram |
+| Font | Times Roman 12 pt |
 | Spasi | 1,5 baris |
-| Margin (hal. ganjil) | Atas: 3,5cm, Bawah: 3cm, Kiri: 4cm, Kanan: 3cm |
-| Margin (hal. genap) | Atas: 3,5cm, Bawah: 3cm, Kiri: 3cm, Kanan: 4cm |
-| Indent paragraf | 1,5 cm |
+| Margin halaman ganjil | Atas 3,5 cm; bawah 3 cm; kiri 4 cm; kanan 3 cm |
+| Margin halaman genap | Atas 3,5 cm; bawah 3 cm; kiri 3 cm; kanan 4 cm |
+| Indentasi paragraf | 1 cm |
 
-### Sampul Luar
+## Pengakuan
 
-| Item | Spesifikasi |
-|------|-------------|
-| Area putih | 0,6 dari tinggi halaman |
-| Area kuning (FTEIC) | 0,4 dari tinggi halaman |
-| Garis biru ITS | Di antara area putih dan kuning |
-| Font | Trebuchet MS (TeX Gyre Heros untuk pdfLaTeX) |
-| Kode tesis | 12pt bold |
-| Judul | 18pt bold |
-| Lainnya | 12pt bold |
-
-## Warna Sampul per Fakultas
-
-| Fakultas | Warna | Kode Hex |
-|----------|-------|----------|
-| FSAD | Salem | #0F8140 |
-| FTIRS | Fire Brick | #b31e23 |
-| FTEIC | Gold | #FFD700 |
-| FTSPK | Nero Black | #231F20 |
-| FTK | Summer Sky | #26AEE4 |
-| FDKBD | Indigo | #4b0082 |
-
-## Catatan Penting
-
-1. **Judul tesis** maksimum 20 kata
-2. **Abstrak** maksimum 350 kata
-3. **Kata kunci** 3-5 kata, diurutkan alfabetis
-4. **Daftar pustaka** minimal 30% dari artikel jurnal ilmiah
-5. Penomoran halaman:
-   - Front matter: angka Romawi kecil (i, ii, iii, ...)
-   - Main matter: angka Arabic (1, 2, 3, ...)
+Inisiator template: [@kurniacf](https://github.com/kurniacf). Repositori ini mengembangkan template untuk kebutuhan tesis Program Magister ITS.
 
 ## Lisensi
 
-Template ini bebas digunakan untuk keperluan akademik di ITS.
-
-## Kontak
-
-Jika ada pertanyaan atau saran, silakan hubungi Program Pascasarjana ITS.
+Repositori ini belum menyertakan berkas lisensi. Silakan hubungi pengelola repositori untuk ketentuan penggunaan dan distribusi.
