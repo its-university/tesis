@@ -3,6 +3,7 @@
 Template LaTeX untuk penulisan tesis Program Magister Institut Teknologi Sepuluh Nopember (ITS) Surabaya, disusun berdasarkan **Panduan Penyusunan Tesis Program Magister ITS 2021**.
 
 [![Build thesis](https://github.com/its-university/tesis/actions/workflows/build.yml/badge.svg)](https://github.com/its-university/tesis/actions/workflows/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Struktur Proyek
 
@@ -13,6 +14,7 @@ tesis/
 ├── cover.pdf                # Sampul hasil kompilasi, digunakan oleh main.tex
 ├── its-thesis.cls           # Class dan format dokumen ITS
 ├── references.bib           # Referensi BibTeX
+├── LICENSE                  # Lisensi MIT
 ├── chapters/                # Bab 1–5
 ├── frontmatter/             # Halaman awal, abstrak, daftar, dan pengesahan
 ├── backmatter/              # Biografi penulis
@@ -80,4 +82,9 @@ Inisiator template: [@kurniacf](https://github.com/kurniacf). Repositori ini men
 
 ## Lisensi
 
-Repositori ini belum menyertakan berkas lisensi. Silakan hubungi pengelola repositori untuk ketentuan penggunaan dan distribusi.
+Template ini didistribusikan di bawah [Lisensi MIT](LICENSE): Anda bebas memakai, menyalin, mengubah, dan mendistribusikannya, asalkan pemberitahuan hak cipta dan izin di berkas `LICENSE` tetap disertakan pada salinan template.
+
+Dua hal tidak tercakup oleh lisensi tersebut:
+
+- **Identitas visual ITS.** Logo dan latar halaman pengesahan (`figures/logo-its.png`, `figures/logo-pengesahan.png`, `figures/background-pengesahan.png`) adalah milik Institut Teknologi Sepuluh Nopember dan disertakan hanya untuk keperluan penyusunan tesis di ITS.
+- **Tesis Anda.** Naskah, gambar, data, dan PDF tesis yang Anda tulis dengan template ini sepenuhnya milik Anda. Anda tidak perlu mencantumkan Lisensi MIT pada tesis Anda.
