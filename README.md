@@ -15,6 +15,8 @@ tesis/
 ├── its-thesis.cls           # Class dan format dokumen ITS
 ├── references.bib           # Referensi BibTeX
 ├── LICENSE                  # Lisensi MIT
+├── CONTRIBUTING.md          # Panduan berkontribusi
+├── CONTRIBUTORS.md          # Daftar kontributor
 ├── chapters/                # Bab 1–5
 ├── frontmatter/             # Halaman awal, abstrak, daftar, dan pengesahan
 ├── backmatter/              # Biografi penulis
@@ -76,9 +78,13 @@ Mengacu pada Panduan Penyusunan Tesis Program Magister ITS 2021:
 | Margin halaman genap | Atas 3,5 cm; bawah 3 cm; kiri 3 cm; kanan 4 cm |
 | Indentasi paragraf | 1 cm |
 
+## Kontribusi
+
+Perbaikan bug, penyesuaian dengan panduan ITS terbaru, dan perbaikan dokumentasi sangat diterima. Baca [CONTRIBUTING.md](CONTRIBUTING.md) sebelum membuka issue atau pull request.
+
 ## Pengakuan
 
-Inisiator template: [@kurniacf](https://github.com/kurniacf). Repositori ini mengembangkan template untuk kebutuhan tesis Program Magister ITS.
+Inisiator template: [@kurniacf](https://github.com/kurniacf). Repositori ini mengembangkan template untuk kebutuhan tesis Program Magister ITS. Daftar lengkap kontributor ada di [CONTRIBUTORS.md](CONTRIBUTORS.md).
 
 ## Lisensi
 
