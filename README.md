@@ -46,7 +46,7 @@ Dari direktori utama proyek, jalankan:
 bash scripts/build.sh
 ```
 
-Skrip mengompilasi `cover.tex`, lalu menjalankan urutan pdfLaTeX–BibTeX–pdfLaTeX dua kali untuk `main.tex`. Hasilnya adalah `cover.pdf` dan `main.pdf`. Perintah yang sama dijalankan oleh GitHub Actions pada setiap push dan pull request; PDF hasil CI tersedia sebagai artefak workflow.
+Skrip mengompilasi `cover.tex`, lalu menjalankan urutan pdfLaTeX–BibTeX–pdfLaTeX dua kali untuk `main.tex`. Hasilnya adalah `cover.pdf` dan `main.pdf`. Skrip gagal jika masih ada rujukan atau sitasi yang belum terselesaikan (tampil sebagai `??` di PDF); peringatan BibTeX seperti kolom yang kosong hanya dilaporkan. Perintah yang sama dijalankan oleh GitHub Actions pada setiap push dan pull request; PDF hasil CI tersedia sebagai artefak workflow.
 
 Kompilasi manual:
 
