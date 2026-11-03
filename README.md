@@ -3,6 +3,7 @@
 Template LaTeX untuk penulisan tesis Program Magister Institut Teknologi Sepuluh Nopember (ITS) Surabaya, disusun berdasarkan **Panduan Penyusunan Tesis Program Magister ITS 2021**.
 
 [![Build thesis](https://github.com/its-university/tesis/actions/workflows/build.yml/badge.svg)](https://github.com/its-university/tesis/actions/workflows/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Struktur Proyek
 
@@ -13,6 +14,9 @@ tesis/
 ├── cover.pdf                # Sampul hasil kompilasi, digunakan oleh main.tex
 ├── its-thesis.cls           # Class dan format dokumen ITS
 ├── references.bib           # Referensi BibTeX
+├── LICENSE                  # Lisensi MIT
+├── CONTRIBUTING.md          # Panduan berkontribusi
+├── CONTRIBUTORS.md          # Daftar kontributor
 ├── chapters/                # Bab 1–5
 ├── frontmatter/             # Halaman awal, abstrak, daftar, dan pengesahan
 ├── backmatter/              # Biografi penulis
@@ -42,7 +46,7 @@ Dari direktori utama proyek, jalankan:
 bash scripts/build.sh
 ```
 
-Skrip mengompilasi `cover.tex`, lalu menjalankan urutan pdfLaTeX–BibTeX–pdfLaTeX dua kali untuk `main.tex`. Hasilnya adalah `cover.pdf` dan `main.pdf`. Perintah yang sama dijalankan oleh GitHub Actions pada setiap push dan pull request; PDF hasil CI tersedia sebagai artefak workflow.
+Skrip mengompilasi `cover.tex`, lalu menjalankan urutan pdfLaTeX–BibTeX–pdfLaTeX dua kali untuk `main.tex`. Hasilnya adalah `cover.pdf` dan `main.pdf`. Skrip gagal jika masih ada rujukan atau sitasi yang belum terselesaikan (tampil sebagai `??` di PDF); peringatan BibTeX seperti kolom yang kosong hanya dilaporkan. Perintah yang sama dijalankan oleh GitHub Actions pada setiap push dan pull request; PDF hasil CI tersedia sebagai artefak workflow.
 
 Kompilasi manual:
 
@@ -74,10 +78,19 @@ Mengacu pada Panduan Penyusunan Tesis Program Magister ITS 2021:
 | Margin halaman genap | Atas 3,5 cm; bawah 3 cm; kiri 3 cm; kanan 4 cm |
 | Indentasi paragraf | 1 cm |
 
+## Kontribusi
+
+Perbaikan bug, penyesuaian dengan panduan ITS terbaru, dan perbaikan dokumentasi sangat diterima. Baca [CONTRIBUTING.md](CONTRIBUTING.md) sebelum membuka issue atau pull request.
+
 ## Pengakuan
 
-Inisiator template: [@kurniacf](https://github.com/kurniacf). Repositori ini mengembangkan template untuk kebutuhan tesis Program Magister ITS.
+Inisiator template: [@kurniacf](https://github.com/kurniacf). Repositori ini mengembangkan template untuk kebutuhan tesis Program Magister ITS. Daftar lengkap kontributor ada di [CONTRIBUTORS.md](CONTRIBUTORS.md).
 
 ## Lisensi
 
-Repositori ini belum menyertakan berkas lisensi. Silakan hubungi pengelola repositori untuk ketentuan penggunaan dan distribusi.
+Template ini didistribusikan di bawah [Lisensi MIT](LICENSE): Anda bebas memakai, menyalin, mengubah, dan mendistribusikannya, asalkan pemberitahuan hak cipta dan izin di berkas `LICENSE` tetap disertakan pada salinan template.
+
+Dua hal tidak tercakup oleh lisensi tersebut:
+
+- **Identitas visual ITS.** Logo dan latar halaman pengesahan (`figures/logo-its.png`, `figures/logo-pengesahan.png`, `figures/background-pengesahan.png`) adalah milik Institut Teknologi Sepuluh Nopember dan disertakan hanya untuk keperluan penyusunan tesis di ITS.
+- **Tesis Anda.** Naskah, gambar, data, dan PDF tesis yang Anda tulis dengan template ini sepenuhnya milik Anda. Anda tidak perlu mencantumkan Lisensi MIT pada tesis Anda.

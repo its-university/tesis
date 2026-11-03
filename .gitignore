@@ -1,15 +1,79 @@
-# LaTeX build files
+# LaTeX auxiliary files
 *.aux
-*.bbl
-*.blg
-*.fdb_latexmk
-*.fls
 *.lof
 *.log
 *.lot
+*.fls
 *.out
-*.synctex.gz
 *.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+# Intermediate documents
+*.dvi
+*.xdv
+*-converted-to.*
+
+# Bibliography auxiliary files (BibTeX/biblatex/Biber)
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# Build tool auxiliary files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# Package auxiliary files
+# algorithm / algorithms (list of algorithms)
+*.alg
+*.loa
+# listings (list of listings)
+*.lol
+# hyperref
+*.brf
+# glossaries / nomencl (in case you add a list of symbols with them)
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.nlo
+*.nls
+# makeidx
+*.idx
+*.ilg
+*.ind
+# minted
+_minted*
+*.pyg
+# TikZ & PGF externalisation
+*.dpth
+*.md5
+*.auxlock
+# todonotes
+*.tdo
+
+# Editor backups
+*.bak
+*.sav
+*~
+.texpadtmp
+/auto/
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Main thesis output (cover.pdf is a tracked input to main.tex)
 /main.pdf
